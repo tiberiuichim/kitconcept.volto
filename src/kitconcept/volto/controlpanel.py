@@ -1,3 +1,5 @@
+# we need this
+
 # -*- coding: UTF-8 -*-
 from kitconcept.volto.interfaces import IVoltoSettings
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
