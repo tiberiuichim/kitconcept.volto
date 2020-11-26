@@ -1,3 +1,5 @@
+# we have eea.depiction
+
 # -*- coding: utf-8 -*-
 from kitconcept.volto import _
 from plone.autoform.interfaces import IFormFieldProvider

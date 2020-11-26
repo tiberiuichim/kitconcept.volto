@@ -1,3 +1,5 @@
+# this is not really need, as we have eea.depiction
+
 # -*- coding: utf-8 -*-
 from Acquisition import aq_base
 from plone.namedfile.file import FILECHUNK_CLASSES
@@ -41,7 +43,6 @@ class VoltoImageScalingFactory(object):
         scale=None,
         **parameters
     ):
-
         """Factory for image scales`."""
         orig_value = getattr(self.context, fieldname, None)
         if orig_value is None:

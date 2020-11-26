@@ -1,3 +1,9 @@
+# need
+from BTrees.IIBTree import intersection
+from plone.app.layout.navigation.root import getNavigationRootObject
+from plone.app.vocabularies.terms import safe_encode
+from plone.registry.interfaces import IRegistry
+from Products.CMFCore.utils import getToolByName
 from zope.component import queryUtility
 from zope.interface import directlyProvides
 from zope.interface import implementer
@@ -5,13 +11,7 @@ from zope.schema.interfaces import ITitledTokenizedTerm
 from zope.schema.interfaces import ITokenizedTerm
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
-from plone.app.layout.navigation.root import getNavigationRootObject
-from plone.app.vocabularies.terms import safe_encode
-from plone.registry.interfaces import IRegistry
 from zope.site.hooks import getSite
-
-from BTrees.IIBTree import intersection
-from Products.CMFCore.utils import getToolByName
 
 
 @implementer(ITokenizedTerm)

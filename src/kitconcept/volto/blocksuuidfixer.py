@@ -1,8 +1,9 @@
-from Products.Five.browser import BrowserView
+# we don't really need this
 from plone import api
-from plone.restapi.behaviors import IBlocks
-from zope.interface import alsoProvides
 from plone.protect.interfaces import IDisableCSRFProtection
+from plone.restapi.behaviors import IBlocks
+from Products.Five.browser import BrowserView
+from zope.interface import alsoProvides
 
 import uuid
 
@@ -37,7 +38,8 @@ class DuplicatedBlocksUUIDFixer(BrowserView):
 
             output.append("\n")
             output.append(
-                "New blocks for {}\n  {}\n".format(obj.absolute_url(), new_blocks)
+                "New blocks for {}\n  {}\n".format(
+                    obj.absolute_url(), new_blocks)
             )
             output.append(
                 "New layout for {}\n  {}\n".format(

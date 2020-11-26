@@ -5,10 +5,12 @@ from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
+# don't need
 class IKitconceptvoltoCoreLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
+# need
 class IVoltoSettings(Interface):
     """Volto settings necessary to store in the backend"""
 

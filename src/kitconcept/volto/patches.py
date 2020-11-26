@@ -15,13 +15,15 @@ LOG = logging.getLogger("Zope.SiteErrorLog")
 def _do_copy_to_zlog(self, now, strtype, entry_id, url, tb_text):
     when = _rate_restrict_pool.get(strtype, 0)
     if now > when:
-        next_when = max(when, now - _rate_restrict_burst * _rate_restrict_period)
+        next_when = max(when, now - _rate_restrict_burst *
+                        _rate_restrict_period)
         next_when += _rate_restrict_period
         _rate_restrict_pool[strtype] = next_when
 
         LOG.error("%s: %s\n%s" % (strtype, url, tb_text.rstrip()))
 
 
+# this is needed for the register url, but not really needed by us
 def construct_url(self, randomstring):
     """Return URL used in registered_nodify_template to allow user to
     change password
@@ -38,7 +40,8 @@ def construct_url(self, randomstring):
         # IAPIRequest to fix this on a higher level
 
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(IVoltoSettings, prefix="volto", check=False)
+        settings = registry.forInterface(
+            IVoltoSettings, prefix="volto", check=False)
         frontend_domain = getattr(settings, "frontend_domain", frontend_domain)
         if frontend_domain.endswith("/"):
             frontend_domain = frontend_domain[:-1]
